@@ -1,3 +1,10 @@
+<?php
+// session_start();
+include 'connect.php'; // Call file connected with database
+// include 'login.php'; // Call the file that adds the data to the database
+$sql = "SELECT * FROM `item`  NATURAL JOIN `category`  ";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +25,8 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"> 
+          <?php echo $row['Full_Name']; ?><span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -44,142 +52,39 @@
   </form>
   </div>
 </nav>
-<div class="container" >
-    <div class="row mx-md-n5 mt-5">
+<!-- <div class="container" > -->
+<?php
+      while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+      // $id = $row['ad_id'];
+    ?>
+    <!-- <div class="row mx-md-n5 mt-5"> -->
 <div class="card mb-3 col ml-3 " style="max-width: 540px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img src="./image/fiction.jpg" class="card-img" style="height: 240px; width: 150px;" alt="...">
+      <img src="image/<?php echo $row['Cover_Image'];?>" class="card-img" style="height: 370px; width: 200px;" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title"> <?php echo $row['Title']; ?></h5>
+        <p class="card-text"> Author Name: <small class="text-muted"> <?php echo $row['Author_Name']; ?></small></p>
+        <p class="card-text"> State: <small class="text-muted"> <?php echo $row['State']; ?></small></p>
+        <p class="card-text"> Edition Date: <small class="text-muted"> <?php echo $row['Edition_Date']; ?></small></p>
+        <p class="card-text"> Category <small class="text-muted"> <?php echo $row['Category_Name']; ?></small></p>
+        <p class="card-text">  <?php echo $row['Category_Type']; ?> <small class="text-muted">Category </small></p>
+
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3 p-3 mb-2 bg-danger text-white " style="width: 200px; margin-left :40%;">reserve</button>
+	      </div>
       </div>
     </div>
   </div>
 </div>
-<div class="card mb-3 col  ml-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg" class="card-img" style="height: 240px; width: 150px;" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 col " style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg"  style="height: 240px; width: 150px;"class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="container" >
-    <div class="row mx-md-n5 mt-5">
-<div class="card mb-3 col ml-3 " style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg" class="card-img" style="height: 240px; width: 150px;" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 col  ml-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg" class="card-img" style="height: 240px; width: 150px;" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 col " style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg"  style="height: 240px; width: 150px;"class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<div class="container" >
-    <div class="row mx-md-n5 mt-5">
-<div class="card mb-3 col ml-3 " style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg" class="card-img" style="height: 240px; width: 150px;" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 col  ml-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg" class="card-img" style="height: 240px; width: 150px;" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 col " style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="./image/fiction.jpg"  style="height: 240px; width: 150px;"class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
+
+<?php
+      };
+      $pdo = null;
+    ?>
 </div>
 </div>
 
