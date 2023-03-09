@@ -1,7 +1,84 @@
 <?php
-session_start();
-include 'connect.php';
+// session_start();
+
+
+// Contact with the database 
+// $conn = new mysqli('localhost', 'root', '', 'tanger_médiathèque');
+
+// if (!$conn) {
+//     die(mysqli_error($conn));
+// }
+
 ?>
+<?php
+// if(isset($_POST['login'])){
+// 	$Username = htmlspecialchars(trim(strtolower($_POST['login'])));
+// 	$Password = $_POST['Password'];
+// 	$query = "SELECT * FROM members WHERE '$Username' =Nickname AND  '$Password'  = Password  ";
+// 	if(mysqli_num_rows(mysqli_query($conn,$query))==1){
+// 		$_SESSION['Username'];
+// 		header("location: index.php");
+// 	}else{
+// 		echo"password incorect?§!";
+// 	}
+// }
+
+?>
+<?php
+
+// session_start();
+
+
+// // Contact with the database 
+// $conn = new mysqli('localhost', 'root', '', 'tanger_médiathèque');
+
+// if (!$conn) {
+//     die(mysqli_error($conn));
+// }
+
+
+
+// $valueEmail = "";
+// $Emailexists = "";
+// $Passwexists = "";
+
+
+// if(isset($_POST['login'])){
+    
+//     $Username = $_POST["Username"];
+//     $passw = md5($_POST["password"]);
+
+//     $selectEmail = "SELECT * FROM `Members` WHERE `Nickname` = '$Username'";
+//     $resultEmail = $db->query($selectEmail);
+
+//     $selectPassw = "SELECT * FROM `Members` WHERE `Nickname` = '$Username' AND `Password` = '$passw' ";
+//     $resultPassw = $db->query($selectPassw);
+
+    
+//     if ($resultEmail->rowCount() > 0){
+//         if($resultPassw->rowCount() > 0){
+            
+//             $selectAdmin = "SELECT * FROM `Members` WHERE `Nickname` = '$Username' AND `Admin` = 1";
+//             $resultAdmin = $db->query($selectAdmin);
+//             if($resultPassw->rowCount() > 0){
+//                 $_SESSION['Username'] = $Username;
+//                 header("Location:index.php");
+//             }else {
+//                 $_SESSION['Username'] = $Username;
+//                 header("Location:login.php");
+//             }
+
+//         }else {
+//             $Passwexists = "This password does not exist";
+//             $valueUsername = " $_POST[Username]";
+//         }
+
+//     }else {
+//         $Emailexists ="This email does not exist";
+// 	}
+// }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,16 +107,16 @@ include 'connect.php';
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
 		      	<h3 class="mb-4 text-center">Have an account?</h3>
-		      	<form action="#" class="signin-form">
+		      	<form method="POST" action="index.php" class="signin-form">
 		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="Username" required>
+		      			<input type="text" class="form-control" placeholder="Username" name="Username" required>
 		      		</div>
 	            <div class="form-group">
-	              <input id="password-field" type="password" class="form-control" placeholder="Password" required>
+	              <input id="password-field" type="password" class="form-control" placeholder="Password" name="Password" required>
 	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 	            </div>
 	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">login</button>
+	            	<button type="submit" class="form-control btn btn-primary submit px-3" id="loginbtn" name="login">login</button>
 	            </div>
 				<div class="form-group">
 	            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign up</button>
