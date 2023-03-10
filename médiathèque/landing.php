@@ -46,8 +46,10 @@ style="background-color: #9ED3F2;
       </li>
     </ul>
   </div>
+  <form method="POST" action="login.php" class="signin-form">
   <div class="btn-group " role="group"  aria-label="Basic mixed styles example">
     <button type="button" class="btn btn-danger" style="background-color: #F56064;">signe up </button>
+</form>
   </div>
   <div class="btn-group mr-5" role="group" aria-label="Basic mixed styles example">
     <button type="button" class="btn btn-danger" style="background-color: #F56064;" id="loginbtn" >login</button>
