@@ -34,10 +34,10 @@ if (isset($_SESSION['Occupation']) && isset($_SESSION['Nickname'])) {
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter Address" value="<?php echo $_SESSION['Address']; ?>"></div>
                         <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter Email" value="<?php echo $_SESSION['Email']; ?>"></div>
-                        <div class="col-md-12"><label class="labels">phone</label><input type="number" class="form-control" placeholder="enter phone" value="<?php echo $_SESSION['Phone']; ?>"></div>
+                        <div class="col-md-12"><label class="labels">phone</label><input type="text" class="form-control" placeholder="enter phone" value="<?php echo $_SESSION['Phone']; ?>"></div>
                         <div class="col-md-12"><label class="labels">CIN</label><input type="text" class="form-control" placeholder="CIN" value="<?php echo $_SESSION['CIN']; ?>"></div>
                         <div class="col-md-12"><label class="labels">occupation</label><input type="text" class="form-control" placeholder="occupation" value="<?php echo $_SESSION['Occupation']; ?>"></div>
-                        <!-- <div class="col-md-12"><label class="labels">Birth Date</label><input type="date" class="form-control" placeholder="Birth Date" value="<?php echo $_SESSION['Birth_Date']; ?>"></div> -->
+                        <!-- <div class="col-md-12"><label class="labels">Birth Date</label><input type="text" class="form-control" placeholder="Birth Date" value="<?php echo $_SESSION['Birth_Date']; ?>"></div> -->
                        
                     </div>
                     <?php 
