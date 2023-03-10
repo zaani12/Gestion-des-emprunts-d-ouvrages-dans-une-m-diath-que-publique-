@@ -1,15 +1,4 @@
-<?php
-// session_start();
 
-
-// Contact with the database 
-// $conn = new mysqli('localhost', 'root', '', 'tanger_médiathèque');
-
-// if (!$conn) {
-//     die(mysqli_error($conn));
-// }
-
-?>
 
 
 <!doctype html>

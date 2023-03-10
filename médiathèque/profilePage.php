@@ -1,3 +1,9 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['Occupation']) && isset($_SESSION['Nickname'])) {
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,19 +28,24 @@
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Nickname</label><input type="text" class="form-control" placeholder="Nickname" value=""></div>
-                        <div class="col-md-6"><label class="labels">Full Name</label><input type="text" class="form-control" value="" placeholder="Full Name"></div>
+                        <div class="col-md-6"><label class="labels">Nickname</label><input type="text" class="form-control" placeholder="Nickname" value="<?php echo $_SESSION['Nickname']; ?>"></div>
+                        <div class="col-md-6"><label class="labels">Full Name</label><input type="text" class="form-control" value="<?php echo $_SESSION['Full_Name']; ?>" placeholder="Full Name"></div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter Address" value=""></div>
-                        <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter Email" value=""></div>
-                        <div class="col-md-12"><label class="labels">phone</label><input type="number" class="form-control" placeholder="enter phone" value=""></div>
-                        <div class="col-md-12"><label class="labels">CIN</label><input type="text" class="form-control" placeholder="CIN" value=""></div>
-                        <div class="col-md-12"><label class="labels">occupation</label><input type="text" class="form-control" placeholder="occupation" value=""></div>
-                        <div class="col-md-12"><label class="labels">Birth Date</label><input type="date" class="form-control" placeholder="Birth Date" value=""></div>
+                        <div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="enter Address" value="<?php echo $_SESSION['Address']; ?>"></div>
+                        <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="enter Email" value="<?php echo $_SESSION['Email']; ?>"></div>
+                        <div class="col-md-12"><label class="labels">phone</label><input type="number" class="form-control" placeholder="enter phone" value="<?php echo $_SESSION['Phone']; ?>"></div>
+                        <div class="col-md-12"><label class="labels">CIN</label><input type="text" class="form-control" placeholder="CIN" value="<?php echo $_SESSION['CIN']; ?>"></div>
+                        <div class="col-md-12"><label class="labels">occupation</label><input type="text" class="form-control" placeholder="occupation" value="<?php echo $_SESSION['Occupation']; ?>"></div>
+                        <!-- <div class="col-md-12"><label class="labels">Birth Date</label><input type="date" class="form-control" placeholder="Birth Date" value="<?php echo $_SESSION['Birth_Date']; ?>"></div> -->
                        
                     </div>
-                   
+                    <?php 
+}else{
+     header("Location: index.php");
+     exit();
+}
+?>   
                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                 </div>
             </div>

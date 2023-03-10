@@ -1,4 +1,10 @@
-<?php 
+<?php
+// session_start();
+// include 'connect.php'; // Call file connected with database
+// // include 'login.php'; // Call the file that adds the data to the database
+// $sql = "SELECT * FROM `members`  NATURAL JOIN `category`  ";
+// $result = $conn->query($sql);
+
 session_start(); 
 // include "connect.php";
 $conn = new mysqli('localhost', 'root', '', 'tanger_médiathèque');
@@ -39,13 +45,8 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
             if ($row['Nickname'] === $uname && $row['Password'] === $pass) {
             	$_SESSION['Nickname'] = $row['Nickname'];
             	$_SESSION['Full_Name'] = $row['Full_Name'];
-            	$_SESSION['Password'] = $row['Password'];
-            	$_SESSION['Address'] = $row['Address'];
-				$_SESSION['Email'] = $row['Email'];
-				$_SESSION['Phone'] = $row['Phone'];
-				$_SESSION['CIN'] = $row['CIN'];
-				$_SESSION['Occupation'] = $row['Occupation'];
-
+            	$_SESSION['Occupation'] = $row['Occupation'];
+            	$_SESSION['Admin'] = $row['Admin'];
 				if($_SESSION['Admin'] != 1){
                 header("Location: home.php");
 		        exit();
@@ -69,3 +70,4 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
 	exit();
 }
 ?>
+
