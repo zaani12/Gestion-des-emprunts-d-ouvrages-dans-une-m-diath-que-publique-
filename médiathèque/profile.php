@@ -46,12 +46,12 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
             	$_SESSION['Nickname'] = $row['Nickname'];
             	$_SESSION['Full_Name'] = $row['Full_Name'];
             	$_SESSION['Occupation'] = $row['Occupation'];
-            	$_SESSION['Admin'] = $row['Admin'];
-				if($_SESSION['Admin'] != 1){
-                header("Location: home.php");
+            	$_SESSION['Birth_Date'] = $row['Birth_Date'];
+				if($_SESSION['Admin'] === 1){
+                header("Location: admin.php");
 		        exit();
             }else{
-             	header("Location: admin.php");
+             	header("Location: home.php");
 		        exit();
 			}
             }
@@ -70,4 +70,6 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
 	exit();
 }
 ?>
+<?php
 
+?>

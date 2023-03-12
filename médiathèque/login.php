@@ -45,10 +45,10 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
 				$_SESSION['Phone'] = $row['Phone'];
 				$_SESSION['CIN'] = $row['CIN'];
 				$_SESSION['Occupation'] = $row['Occupation'];
-				// $_SESSION['Birth_Date'] = $row['Birth_Date'];
+				$_SESSION['Birth_Date'] = $row['Birth_Date'];
 
 
-				if($_SESSION['Admin'] != 1){
+				if($row['Admin'] != 1){
                 header("Location: home.php");
 		        exit();
             }else{
