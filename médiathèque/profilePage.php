@@ -26,7 +26,7 @@ if (isset($_SESSION['Occupation']) && isset($_SESSION['Nickname'])) {
 
             <div class="col-md-5 border-right">
                 <div class="p-3 py-5">
-                <form action="profile.php" method="POST" class="profile-form">
+                <form action="updateProfile.php" method="POST" class="profile-form">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
@@ -43,14 +43,15 @@ if (isset($_SESSION['Occupation']) && isset($_SESSION['Nickname'])) {
                         <!-- <div class="col-md-12"><label class="labels">Birth Date</label><input type="text" class="form-control" placeholder="Birth Date" value="<?php echo $_SESSION['Birth_Date']; ?>"></div> -->
                        
                     </div>
-                    <?php 
+  
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" name="update" type="submit">Save Profile</button></div>
+            </form>
+            <?php 
 }else{
      header("Location: index.php");
      exit();
 }
-?>   
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
-            </form>
+?> 
                 </div>
             </div>
         </div>

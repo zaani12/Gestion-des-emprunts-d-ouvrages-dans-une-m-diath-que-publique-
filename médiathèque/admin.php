@@ -80,13 +80,13 @@ $result = $conn->query($sql);
       while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
       // $id = $row['ad_id'];
     ?>
-    <!-- <div class="row mx-md-n5 mt-5"> -->
-<div class="card mb-3 col ml-3 " style="max-width: 540px;">
+    <!-- <div class="card d-inline" > -->
+<div class="d-inline" style="max-width: 540px;">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="image/<?php echo $row['Cover_Image'];?>" class="card-img" style="height: 370px; width: 200px;" alt="...">
+    <div class="col-md-4 mt-3">
+      <img src="image/<?php echo $row['Cover_Image'];?>" class="card-img" style="height: 370px; width: 200px;" alt="...Cover Image">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6 ml-5">
       <div class="card-body">
         <h5 class="card-title"> <?php echo $row['Title']; ?></h5>
         <p class="card-text"> Author Name: <small class="text-muted"> <?php echo $row['Author_Name']; ?></small></p>
